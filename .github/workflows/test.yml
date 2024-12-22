@@ -3,7 +3,8 @@ on:
   push:
   schedule:
     # Runs daily at 12:00 PM CET
-    - cron: "0 10 * * *"
+    - cron: "0 12 * * *"
+  workflow_dispatch: # This allows you to manually trigger the workflow
 
 jobs:
   cypress-run:
@@ -15,3 +16,4 @@ jobs:
       # Install npm dependencies, cache them correctly, and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v6
+
